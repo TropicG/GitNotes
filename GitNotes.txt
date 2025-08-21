@@ -313,6 +313,8 @@
 	git config --global alias.st status, сега вместо git status може да напишеш git st
 	git config --global alias.unstage 'reset HEAD --', ако напишеш git unstage ще ти изпълни git reset HEAD -- командата 
 	
+* 
+	
 	
 	
 	
