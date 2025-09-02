@@ -85,6 +85,121 @@
 	// ако искаш да търсиш за ключова дума между комитите 
 	git log -S <functionName>
 	
+	// показва и бранчовете, към кои комити сочат 
+	git log --decorate 
+	
+	// за да видиш историята на един бранч 
+	git log <branchName>
+	
+	// за да видиш историята на всички бранчове 
+	git log --all
+	
 ====================================================
 
+	// ако искаш да премахнеш елемент от staging area-та (няма да се махнат промените в него)
+	git reset HEAD <filename>
+	
+	// ако искаш направо да discard-неш промени, който се намират в working directory-то 
+	git checkout -- <fileName>
+	
+	// еквивалентно на git reset HEAD <filename>
+	git restore --staged <fileName>
+	
+	// еквивалентно на git checkout -- <filename>
+	git restore <filename>
+	
+====================================================
+
+	// може да видиш всички git remote repos и url-а към който сочат 
+	git remote -v
+	
+	// за да провериш повече информация относно remote repo-то (от къде fetch-ва, къде push-ва и друга информация)
+	git remote show <remoteName>
+	
+	// за да видиш само remoteNaems на различните remote repo-та 
+	git remote show 
+	
+	// за да добавиш репо към което искаш да теглиш 
+	git remote <remoteName> <url>
+	
+	// за да изтеглиш новата информация (без да я сливаш още)
+	git fetch <remoteName>
+	
+	// автоматично тегелене на промени и сливане към бранч 
+	git pull 
+	
+	// за да качиш в remote repo
+	git push <remoteName> <branch>  
+	
+	// за да преименуваш дадено remote repo 
+	git remote rename <oldRepoName> <newRepoName>
+	
+	// за да премахнеш дадено remote repo (това просто ще премахне url връзката, няма да ти изтрие данните)	
+	git remote remove <repoName>
+	
+====================================================
+
+
+	// за да видиш текущите тагове 
+	git tag 
+	
+	// за да търсиш таг базирано на ключови данни 
+	git tag -l <versionName>
+	
+	// създаване на lightweighted tag (не забравяй прост осочи към комита на който се намира HEAD сега)
+	git tag <versionName>
+	
+	// създаване на annotated tag (освен че сочи към комита, на който е HEAD ще се добави и комит съобщение и ще се запише кой е автора при комит съобщението)
+	git tag -a <versionName> -m <commitMessage>
+	
+	// при подаден чексум, може да кажеш на кой комит да има версия
+	git tag -a <versionName> <checksum>
+	
+	// за да пуснеш tag към remote repoto (той не се пуска сам към remote repo-то да знаеш)
+	git push origin <versionName>
+	
+	// за да изтриеш локално даден таг
+	git tag -d <versionName>
+	
+	// за да премахнеш и вече изтри локално таг от remote repo-то 
+	git push origin --delete <versionName>
+	
+	// за да се превключиш на даден tag
+	git checkout <versionName> (Това ще те вкара в DETACHED HEAD състояние и каквото комитнеш ще го изгубиш)
+	Тук е най-safe да си направиш бранч от tag-а: git checkout -b <branchName> <versionName>
+
+====================================================
+
+	// създаване на псевдоними, за по-бързо писане на операции 
+	git config --global alias.unstage reset --staged
+	git config --global alias.discard restore
+
+====================================================
+
+	// правиш бранч който сочи към същия комит който сочи HEAD, но не се прехвърляш на него (със звездичка ти показва на кой си)
+	git branch <branchName>
+	
+	// за да превключиш на друг бранч 
+	git checkout <branchName>
+	
+	// за да направиш бранч и да се прехвърлиш на него 
+	git checkout -b <branchName>
+	
+	// за да изтриеш бранч 
+	git branch -d <branchName> (ако искаш да изтрие не мърджнат бранч използвай -D вместо -d)
+	
+	// за да видиш последните комити към бранчовете 
+	git branch -v 
+	
+	// за да видиш кои клонове са се слелиа (тези които нямат звездичка могат да бъдат изтрити)
+	git branch --merged
+	
+	// за да видиш кой бранчове не са ти слети 
+	git branch --no-merged
+	
+	// за да видиш към кой бранч, кои бранчове са слети
+	git branch --merged main 
+	
+	
+	
 	
