@@ -426,7 +426,7 @@
 	Та ако имаш конвенцията за следване на име на remote brancho-ове е <remote>/<branch>
 	Ако искаш да видиш някой бранч в remote repo origin правилното име ще е remote/repo
 
-	Може да използваш командите git remove show <remote> за да видиш другите remote branchove към даденото remote repo
+	Може да използваш командите git remote show <remote> за да видиш другите remote branchove към даденото remote repo
 
 * Изпращане към сървър (pushing)
 

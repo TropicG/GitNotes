@@ -200,6 +200,18 @@
 	// за да видиш към кой бранч, кои бранчове са слети
 	git branch --merged main 
 	
+	// за да преименуваш бранч
+	git branch --move <oldBranchName> <newBranchName> (тази промяна става само локално)
+	git push --set-upstream origin <newBranchName> (добавиш преименувания бранч към remote repo-то)
+	git push origin --delete <oldBranchName> (премахаш бранча със старотото му име от remote repo-то)
+	
+	// за да слееш клон към този на който си сега 
+	git merge <branchName>
+	
+	// за да rebase-неш бранч към този на който си сега 
+	git rebase <branchName>
+	
+	
 	
 	
 	
