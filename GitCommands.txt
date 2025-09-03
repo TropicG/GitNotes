@@ -259,4 +259,34 @@
 	// за да изтриеш всички сташове 
 	git stash drop clear
 	
+=================================================
+
+	// за да приложиш избран комит върху твоя бранч 
+	git cherry-pick <checkSum>
 	
+	// за да избереш няколко комита 
+	git cherry-pick <checkSum> <checkSum>
+	
+	// за да вземеш нещата от избран комит, но без да правиш комит на сегашния ти бранч все още
+	git cherry-pick --no-commit <checksum>
+	
+	// ако искаш да редактираш съобщението 
+	git cherry-pick --edit <checksum>
+	
+=================================================
+
+	// за да премахнеш промените от избран комит като след това да направиш комит че си revert-нал промените от комита 
+	git revert <checksum>
+	
+	// git reset трие историята на комитите 
+	// за да върнеш HEAD към този комит, но да запазиш промените ти в working directory, а промените в комитите в staging area-та
+	git reset --soft <checksum>
+	
+	// за да върнеш HEAD към този комит, но да запазиш промените ти в working directoryи и промените в комитите в working directory-тo
+	git reset --mixed <checksum> (по default --mixed се използва ако използваш git reset <checksum>)
+	
+	// за да върнеш HEAD към този комит, но да изтриеш всичко от working directory-то и staging area-та 
+	git reset --hard <checksum>
+	
+	// за да провериш всяко едно действие на твоя компютър с git 
+	git reflog
